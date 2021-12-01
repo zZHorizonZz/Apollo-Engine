@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ProjectApollo" />
+        <module name="Apollo-Engine" />
       </profile>
     </annotationProcessing>
   </component>
