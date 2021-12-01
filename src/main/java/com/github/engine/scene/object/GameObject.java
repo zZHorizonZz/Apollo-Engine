@@ -1,5 +1,6 @@
 package com.github.engine.scene.object;
 
+import com.github.engine.data.Transform;
 import com.github.engine.scene.object.component.Component;
 
 import javax.management.openmbean.KeyAlreadyExistsException;
@@ -9,9 +10,7 @@ public class GameObject {
 
     private String name;
 
-    private float x;
-    private float y;
-    private float z;
+    private Transform transform;
 
     private final List<Component> componentList = new ArrayList<>();
     private final Map<String, GameObject> childGameObject = new HashMap<>();
@@ -22,9 +21,7 @@ public class GameObject {
 
     public GameObject(String name, float x, float y, float z) {
         this.name = name;
-        this.x = x;
-        this.y = y;
-        this.z = z;
+        this.transform = new Transform(x, y, z);
     }
 
     public void update() {
@@ -39,28 +36,12 @@ public class GameObject {
         this.name = name;
     }
 
-    public float getX() {
-        return x;
+    public Transform getTransform() {
+        return transform;
     }
 
-    public void setX(float x) {
-        this.x = x;
-    }
-
-    public float getY() {
-        return y;
-    }
-
-    public void setY(float y) {
-        this.y = y;
-    }
-
-    public float getZ() {
-        return z;
-    }
-
-    public void setZ(float z) {
-        this.z = z;
+    public void setTransform(Transform transform) {
+        this.transform = transform;
     }
 
     public List<Component> getComponentList() {
